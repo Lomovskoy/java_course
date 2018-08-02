@@ -4,6 +4,7 @@ import interfaces.ICalculate;
 
 public class Calculate implements ICalculate {
 
+
     /**
      * Операция сложения
      *
@@ -11,8 +12,8 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return сумма
      */
-    public Number summ(Number first, Number second) {
-        return null;
+    public Integer summ(Integer first, Integer second) {
+        return first + second;
     }
 
     /**
@@ -22,8 +23,8 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return разновсть
      */
-    public Number subtract(Number first, Number second) {
-        return null;
+    public Integer subtract(Integer first, Integer second) {
+        return first - second;
     }
 
     /**
@@ -33,8 +34,8 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return результат
      */
-    public Number multiply(Number first, Number second) {
-        return null;
+    public Integer multiply(Integer first, Integer second) {
+        return first * second;
     }
 
     /**
@@ -44,8 +45,8 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return результат
      */
-    public Number share(Number first, Number second) {
-        return null;
+    public Double share(Integer first, Integer second) {
+        return Double.valueOf(first / second);
     }
 
     /**
@@ -55,7 +56,7 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return результат
      */
-    public Number degreeOf(Number first, Number second) {
+    public Integer degreeOf(Integer first, Integer second) {
         return null;
     }
 
@@ -65,7 +66,7 @@ public class Calculate implements ICalculate {
      * @param result аргумент длоя печати
      */
     public void printing(Number result) {
-
+        System.out.println("Резальтат вычисления = " + result);
     }
 
     /**
@@ -74,7 +75,7 @@ public class Calculate implements ICalculate {
      * @param er
      */
     public void err(String er) {
-
+        System.out.println(er);
     }
 
     /**
@@ -84,7 +85,24 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @param ch     какую операцию сделать
      */
-    public void choice(Number first, Number second, String ch) {
-
+    public void choice(Integer first, Integer second, String ch) {
+        if(ch.equals("1")){
+            Integer res = Calculate.this.summ(first, second);
+            Calculate.this.printing(res);
+        }else if(ch.equals("2")){
+            Integer res = Calculate.this.subtract(first, second);
+            Calculate.this.printing(res);
+        }else if(ch.equals("3")){
+            Integer res = Calculate.this.multiply(first, second);
+            Calculate.this.printing(res);
+        }else if(ch.equals("4")){
+            Double res = Calculate.this.share(first, second);
+            Calculate.this.printing(res);
+        }else if(ch.equals("5")){
+            Integer res = Calculate.this.degreeOf(first, second);
+            Calculate.this.printing(res);
+        }else{
+            Calculate.this.err("Ошибка выбора орперации");
+        }
     }
 }
