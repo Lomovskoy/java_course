@@ -4,6 +4,10 @@ import interfaces.ICalculate;
 
 public class Calculate implements ICalculate {
 
+    //Результат вычислений
+    private Double result = null;
+    //Выбор действия
+    private String ch = null;
 
     /**
      * Операция сложения
@@ -12,8 +16,8 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return сумма
      */
-    public Double summ(Double first, Double second) {
-        return first + second;
+    public void summ(Double first, Double second) {
+        this.result =  first + second;
     }
 
     /**
@@ -23,8 +27,8 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return разновсть
      */
-    public Double subtract(Double first, Double second) {
-        return first - second;
+    public void subtract(Double first, Double second) {
+        this.result = first - second;
     }
 
     /**
@@ -34,8 +38,8 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return результат
      */
-    public Double multiply(Double first, Double second) {
-        return first * second;
+    public void multiply(Double first, Double second) {
+        this.result = first * second;
     }
 
     /**
@@ -45,8 +49,8 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return результат
      */
-    public Double share(Double first, Double second) {
-        return Double.valueOf(first / second);
+    public void share(Double first, Double second) {
+        this.result = Double.valueOf(first / second);
     }
 
     /**
@@ -56,17 +60,15 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return результат
      */
-    public Double degreeOf(Double first, Double second) {
-        return Math.pow(first, second);
+    public void degreeOf(Double first, Double second) {
+        this.result = Math.pow(first, second);
     }
 
     /**
      * Операция печати на экран
-     *
-     * @param result аргумент длоя печати
      */
-    public void printing(Number result) {
-        System.out.println("Резальтат вычисления = " + result);
+    public void printing() {
+        System.out.println("Резальтат вычисления = " + this.result);
     }
 
     /**
@@ -86,23 +88,66 @@ public class Calculate implements ICalculate {
      * @param ch     какую операцию сделать
      */
     public void choice(Double first, Double second, String ch) {
-        if(ch.equals("1")){
-            Double res = Calculate.this.summ(first, second);
-            Calculate.this.printing(res);
-        }else if(ch.equals("2")){
-            Double res = Calculate.this.subtract(first, second);
-            Calculate.this.printing(res);
-        }else if(ch.equals("3")){
-            Double res = Calculate.this.multiply(first, second);
-            Calculate.this.printing(res);
-        }else if(ch.equals("4")){
-            Double res = Calculate.this.share(first, second);
-            Calculate.this.printing(res);
-        }else if(ch.equals("5")){
-            Double res = Calculate.this.degreeOf(first, second);
-            Calculate.this.printing(res);
+        this.ch = ch;
+        if(this.ch.equals("1")){
+            Calculate.this.summ(first, second);
+            Calculate.this.printing();
+        }else if(this.ch.equals("2")){
+            Calculate.this.subtract(first, second);
+            Calculate.this.printing();
+        }else if(this.ch.equals("3")){
+            Calculate.this.multiply(first, second);
+            Calculate.this.printing();
+        }else if(this.ch.equals("4")){
+            Calculate.this.share(first, second);
+            Calculate.this.printing();
+        }else if(this.ch.equals("5")){
+            Calculate.this.degreeOf(first, second);
+            Calculate.this.printing();
         }else{
             Calculate.this.err("Ошибка выбора орперации");
         }
+    }
+
+    /**
+     * Получить результат
+     *
+     * @return результат
+     */
+    @Override
+    public Double getResult() {
+        return this.result;
+    }
+
+    /**
+     * Получить последнее действие
+     *
+     * @return действие
+     */
+    @Override
+    public String getAction() {
+        return this.ch;
+    }
+
+    /**
+     * Очистить результат
+     *
+     * @return да или нет
+     */
+    @Override
+    public Boolean clearResult() {
+        this.result = null;
+        return true;
+    }
+
+    /**
+     * Очистить действие
+     *
+     * @return да или нет
+     */
+    @Override
+    public Boolean clearAction() {
+        this.ch = null;
+        return true;
     }
 }

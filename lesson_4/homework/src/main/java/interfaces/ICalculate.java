@@ -7,7 +7,7 @@ package interfaces;
  * @since 02.08.2018
  * @version 1
  */
-public interface ICalculate <T extends Number>{
+public interface ICalculate{
 
     /**
      * Операция сложения
@@ -15,7 +15,7 @@ public interface ICalculate <T extends Number>{
      * @param second второй аргумент
      * @return сумма
      */
-    Double summ(Double first, Double second);
+    void summ(Double first, Double second);
 
     /**
      * Операция выситания
@@ -23,7 +23,7 @@ public interface ICalculate <T extends Number>{
      * @param second второй аргумент
      * @return разновсть
      */
-    Double subtract(Double first, Double second);
+    void subtract(Double first, Double second);
 
     /**
      * Операция умножения
@@ -31,7 +31,7 @@ public interface ICalculate <T extends Number>{
      * @param second второй аргумент
      * @return результат
      */
-    Double multiply(Double first, Double second);
+    void multiply(Double first, Double second);
 
     /**
      * Операция деления
@@ -39,7 +39,7 @@ public interface ICalculate <T extends Number>{
      * @param second второй аргумент
      * @return результат
      */
-    Double share(Double first, Double second);
+    void share(Double first, Double second);
 
     /**
      * Операция вывозведения в степень
@@ -47,13 +47,12 @@ public interface ICalculate <T extends Number>{
      * @param second второй аргумент
      * @return результат
      */
-    Double degreeOf(Double first, Double second);
+    void degreeOf(Double first, Double second);
 
     /**
      * Операция печати на экран
-     * @param result аргумент длоя печати
      */
-    void printing(T result);
+    void printing();
 
     /**
      * Метод печати ошибок
@@ -68,4 +67,28 @@ public interface ICalculate <T extends Number>{
      * @param ch какую операцию сделать
      */
     void choice(Double first, Double second, String ch);
+
+    /**
+     * Получить результат
+     * @return результат
+     */
+    Double getResult();
+
+    /**
+     * Получить последнее действие
+     * @return действие
+     */
+    String getAction();
+
+    /**
+     * Очистить результат
+     * @return да или нет
+     */
+    Boolean clearResult();
+
+    /**
+     * Очистить действие
+     * @return да или нет
+     */
+    Boolean clearAction();
 }
