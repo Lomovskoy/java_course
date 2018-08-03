@@ -15,7 +15,7 @@ public interface ICalculate <T extends Number>{
      * @param second второй аргумент
      * @return сумма
      */
-    Integer summ(Integer first, Integer second);
+    Double summ(Double first, Double second);
 
     /**
      * Операция выситания
@@ -23,7 +23,7 @@ public interface ICalculate <T extends Number>{
      * @param second второй аргумент
      * @return разновсть
      */
-    Integer subtract(Integer first, Integer second);
+    Double subtract(Double first, Double second);
 
     /**
      * Операция умножения
@@ -31,7 +31,7 @@ public interface ICalculate <T extends Number>{
      * @param second второй аргумент
      * @return результат
      */
-    Integer multiply(Integer first, Integer second);
+    Double multiply(Double first, Double second);
 
     /**
      * Операция деления
@@ -39,7 +39,7 @@ public interface ICalculate <T extends Number>{
      * @param second второй аргумент
      * @return результат
      */
-    Double share(Integer first, Integer second);
+    Double share(Double first, Double second);
 
     /**
      * Операция вывозведения в степень
@@ -47,7 +47,7 @@ public interface ICalculate <T extends Number>{
      * @param second второй аргумент
      * @return результат
      */
-    Double degreeOf(Integer first, Integer second);
+    Double degreeOf(Double first, Double second);
 
     /**
      * Операция печати на экран
@@ -67,5 +67,5 @@ public interface ICalculate <T extends Number>{
      * @param second второй аргумент
      * @param ch какую операцию сделать
      */
-    void choice(Integer first, Integer second, String ch);
+    void choice(Double first, Double second, String ch);
 }

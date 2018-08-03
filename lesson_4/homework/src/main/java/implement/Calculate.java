@@ -12,7 +12,7 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return сумма
      */
-    public Integer summ(Integer first, Integer second) {
+    public Double summ(Double first, Double second) {
         return first + second;
     }
 
@@ -23,7 +23,7 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return разновсть
      */
-    public Integer subtract(Integer first, Integer second) {
+    public Double subtract(Double first, Double second) {
         return first - second;
     }
 
@@ -34,7 +34,7 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return результат
      */
-    public Integer multiply(Integer first, Integer second) {
+    public Double multiply(Double first, Double second) {
         return first * second;
     }
 
@@ -45,7 +45,7 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return результат
      */
-    public Double share(Integer first, Integer second) {
+    public Double share(Double first, Double second) {
         return Double.valueOf(first / second);
     }
 
@@ -56,7 +56,7 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @return результат
      */
-    public Double degreeOf(Integer first, Integer second) {
+    public Double degreeOf(Double first, Double second) {
         return Math.pow(first, second);
     }
 
@@ -85,15 +85,15 @@ public class Calculate implements ICalculate {
      * @param second второй аргумент
      * @param ch     какую операцию сделать
      */
-    public void choice(Integer first, Integer second, String ch) {
+    public void choice(Double first, Double second, String ch) {
         if(ch.equals("1")){
-            Integer res = Calculate.this.summ(first, second);
+            Double res = Calculate.this.summ(first, second);
             Calculate.this.printing(res);
         }else if(ch.equals("2")){
-            Integer res = Calculate.this.subtract(first, second);
+            Double res = Calculate.this.subtract(first, second);
             Calculate.this.printing(res);
         }else if(ch.equals("3")){
-            Integer res = Calculate.this.multiply(first, second);
+            Double res = Calculate.this.multiply(first, second);
             Calculate.this.printing(res);
         }else if(ch.equals("4")){
             Double res = Calculate.this.share(first, second);
