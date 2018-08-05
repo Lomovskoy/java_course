@@ -94,4 +94,8 @@ public class InteractRunner {
 
         System.out.println("Программа завершена");
     }
+
+    private void previousResult(){
+
+    }
 }

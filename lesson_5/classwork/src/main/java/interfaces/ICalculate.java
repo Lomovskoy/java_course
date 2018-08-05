@@ -5,7 +5,7 @@ package interfaces;
  * с 5ю методами.
  * @author lomov
  * @since 02.08.2018
- * @version 2
+ * @version 3.0
  */
 public interface ICalculate{
 
